@@ -186,6 +186,11 @@ main = Environment(tools=[
     ])
 
 main.Tool(SCons.Tool.FindTool(['gcc', 'clang'], main))
+
+main.Tool(SCons.Tool.FindTool(['g++', 'clang++'], main))
+if SCons.Tool.FindTool(['compilation_db'], main) is not None:
+    main.Tool('compilation_db')
+
 main.Tool(SCons.Tool.FindTool(['g++', 'clang++'], main))
 
 Export('main')
