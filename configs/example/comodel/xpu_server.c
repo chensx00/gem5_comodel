@@ -91,8 +91,17 @@ unmap_xpu_io()
     xpu_mmio_size = -1;
 }
 
-int main(int argc, char *argv[])
+//int main(int argc, char *argv[])
+int main()
 {
+    int argc = 3;
+    char *argv[3];
+    char Str[3][20]={"","/tmp/XPU","8"};
+    argv[0]=Str[0];
+    argv[1]=Str[1];
+    argv[2]=Str[2];
+
+
     char server_path[256];
     if (argc != 3) {
         usage(argv[0]);

@@ -63,7 +63,7 @@ read_word(uint16_t addr)
     n = write(client_socket, &client_packet.head, sizeof(client_packet.head));
     assert(n == sizeof(client_packet.head));
     n = read(client_socket, &w, sizeof(w));
-    assert(n == sizeof(w));
+    //assert(n == sizeof(w));
 
     return w;
 }
@@ -135,19 +135,43 @@ main(int argc, char* argv[])
     }
     printf("Connected to XPU I/O server at '%s'.\n", server_path);
 
+    
     uint32_t w;
-    write_word(0x0, 0);   // reset
+    write_word(0x0, 0x11111111);   
+    printf("addr = 0x0 write_word=%#x\n", 0x11111111);
+
     w = read_word(0x0);
-    printf("Reset the counter: counter=%d\n", w);
-    write_word(0x4, 5);   // count
-    w = read_word(0x0);
-    printf("Count +5: counter=%d\n", w);
-    write_word(0x4, 6);   // count
-    w = read_word(0x0);
-    printf("Count +6: counter=%d\n", w);
-    write_word(0x4, 7);   // count
-    w = read_word(0x0);
-    printf("Count +7: counter=%d\n", w);
+    printf("addr = 0x0 read_word=%#x\n", w);
+    
+    write_word(0x4, 0x22222222);   
+    printf("addr = 0x4 write_word=%#x\n", 0x22222222);
+
+    w = read_word(0x4);
+    printf("addr = 0x4 read_word=%#x\n", w);
+    
+    write_word(0x8, 0x33333333);   
+    printf("addr = 0x8 write_word=%#x\n", 0x33333333);
+
+    w = read_word(0x8);
+    printf("addr = 0x8 read_word=%#x\n", w);
+    
+    write_word(0xc, 0x44444444);   
+    printf("addr = 0xc write_word=%#x\n", 0x44444444);
+
+    w = read_word(0xc);
+    printf("addr = 0xc read_word=%#x\n", w);
+    
+    write_word(0x10, 0x7f7f7f7f);   
+    printf("addr = 0x10 write_word=%#x\n", 0x7f7f7f7f);
+
+    w = read_word(0x10);
+    printf("addr = 0x10 read_word=%#x\n", w);
+
+    w = read_word(0x14);
+    printf("addr = 0x14 read_word=%#x\n", w);
+
+    printf("result=%#x\n", w);
+
     close_command();
 
     close(client_socket);

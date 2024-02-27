@@ -31,7 +31,17 @@ m5out
 /system/arm/bootloader/arm64/boot_v2.arm64
 configs/example/memcheck.cfg
 configs/example/comodel/sample_counter_client
+configs/example/comodel/sample_checksum_client
 configs/example/comodel/xpu_server
+
+ext/rtl/checksum/verilator_checksumxcel_vcd
+ext/rtl/checksum/libVerilatorChecksumXcel.so
+ext/rtl/wrapper_checksumxcel.hh
+ext/rtl/libVerilatorChecksumXcel.so
+ext/rtl/interface_packet.hh
+
+dev.vcd
+
 configs/dram/lowp_sweep.cfg
 .pyenv
 .vscode
