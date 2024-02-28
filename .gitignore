@@ -41,9 +41,10 @@ ext/rtl/wrapper_checksumxcel.hh
 ext/rtl/libVerilatorChecksumXcel.so
 ext/rtl/interface_packet.hh
 
-interface_packet.hh
-libVerilatorChecksumXcel.so
 wrapper_checksumxcel.hh
+libVerilatorChecksumXcel.so
+interface_packet.hh
+
 
 dev.vcd
 
