@@ -9,13 +9,18 @@
 namespace gem5
 {
 
+
+/*
+ * We plan to use the evaluate() function of the Ticked class 
+ *  to tick the RTL clock in gem5 for each tick. Currently, we 
+ *  are temporarily ticking the RTL in the write() and read() functions.
+ */
 class SampleChecksum : public BasicPioDevice //, public Ticked
 {
         enum { IO_SIZE = 64 };
     public:
         SampleChecksum(const SampleChecksumParams &params);
-        //     : BasicPioDevice(params, IO_SIZE), counter(0)
-        // { }
+
 
         Tick read(PacketPtr pkt) override;
         Tick write(PacketPtr pkt) override;
@@ -29,8 +34,7 @@ class SampleChecksum : public BasicPioDevice //, public Ticked
         // as the clock period for the RTL model
         //void evaluate() override;
     
-    // protected:
-    //     unsigned int counter;
+
     
     private:
         Wrapper_ChecksumXcel *wr;

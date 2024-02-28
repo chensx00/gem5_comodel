@@ -94,6 +94,10 @@ unmap_xpu_io()
 //int main(int argc, char *argv[])
 int main()
 {
+
+//TODO: I currently don't know how to pass arguments 
+// to the main function through gem5, so I'll directly 
+// assign values to the parameters in the main function.
     int argc = 3;
     char *argv[3];
     char Str[3][20]={"","/tmp/XPU","8"};

@@ -2,8 +2,13 @@ DIR_VCD = verilator_checksumxcel_vcd
 CC=gcc
 CXX=g++
 OBJS_VERILATE='*.v'
+
+
+## verilate_vcd : 	Call Verilator to generate C++ code.
+## build : 			Compile the RTL's C++ code and the wrapper 
+##					 into a dynamic link library. 
+
 verilate_vcd: $(OBJS)
-#	$(VERILATOR_ROOT)/bin/verilator -Wall -cc --trace ChecksumXcelRTL.v --Mdir $(DIR_VCD)
 	$(VERILATOR_ROOT)/bin/verilator -Wno-fatal -cc --trace ChecksumXcelRTL.v --Mdir $(DIR_VCD)
 
 build: verilate_vcd wrapper_checksumxcel.cc wrapper_checksumxcel.hh

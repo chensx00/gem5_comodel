@@ -1,3 +1,7 @@
+
+## Running this script in the PyMTL3 environment translates 
+##  ChecksumXcelRTL into the Verilog language.
+
 from pymtl3 import *
 import inspect
 from ChecksumXcelRTL import ChecksumXcelRTL
