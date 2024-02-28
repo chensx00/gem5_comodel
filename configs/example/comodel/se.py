@@ -293,8 +293,14 @@ mmio_driver = EmulatedMMIODriver(
     filename="se_mmio", mmio_addr=0xF0000000, mmio_size=8
 )
 multiprocesses[0].drivers = [mmio_driver]
-system.samplecounter = SampleCounter(pio_addr=0xF0000000)
-system.samplecounter.pio = system.membus.mem_side_ports
+
+# Checksum
+system.samplechecksum = SampleChecksum(pio_addr=0xF0000000)
+system.samplechecksum.pio = system.membus.mem_side_ports
+
+# Counter
+# system.samplecounter = SampleCounter(pio_addr=0xF0000000)
+# system.samplecounter.pio = system.membus.mem_side_ports
 
 system.workload = SEWorkload.init_compatible(mp0_path)
 

@@ -33,6 +33,7 @@ configs/example/memcheck.cfg
 configs/example/comodel/sample_counter_client
 configs/example/comodel/sample_checksum_client
 configs/example/comodel/xpu_server
+configs/example/comodel/sample_device_client
 
 ext/rtl/checksum/verilator_checksumxcel_vcd
 ext/rtl/checksum/libVerilatorChecksumXcel.so
@@ -40,7 +41,12 @@ ext/rtl/wrapper_checksumxcel.hh
 ext/rtl/libVerilatorChecksumXcel.so
 ext/rtl/interface_packet.hh
 
+interface_packet.hh
+libVerilatorChecksumXcel.so
+wrapper_checksumxcel.hh
+
 dev.vcd
+
 
 configs/dram/lowp_sweep.cfg
 .pyenv

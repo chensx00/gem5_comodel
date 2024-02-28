@@ -1,12 +1,12 @@
-all: xpu_server sample_counter_client sample_checksum_client
+all: xpu_server sample_device_client
 
 # Run on gem5 X86
 xpu_server: xpu_server.c
 
 # Run on local X86
-sample_counter_client: sample_counter_client.c
+sample_device_client: sample_device_client.c
 
-sample_checksum_client: sample_checksum_client.c
+
 
 clean:
-	rm -f xpu_server sample_counter_client sample_checksum_client
+	rm -f xpu_server sample_counter_client
